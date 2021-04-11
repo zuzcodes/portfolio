@@ -1,0 +1,572 @@
+/********** GENERAL **********/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: rgb(68, 68, 68);
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+h4 {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: smaller;
+}
+
+/********** NAVIGATION **********/
+
+.hamburger {
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 30;
+  transition: all 0.5s;
+}
+
+.hamburger:hover {
+  border: none;
+}
+
+.open .hamburger {
+  background-color: transparent;
+}
+
+.burger {
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgb(68, 68, 68);
+  margin: 4px 0;
+  transform-origin: right;
+  transition: all 0.5s;
+}
+
+.open .bar-1 {
+  transform: rotate(-43deg) translateY(-7px);
+  background-color: rgb(68, 68, 68);
+}
+
+.bar-2 {
+  width: 20px;
+}
+
+.open .bar-2 {
+  opacity: 0;
+}
+
+.bar-3 {
+  width: 30px;
+}
+
+.open .bar-3 {
+  transform: rotate(43deg) translateY(7px);
+  background-color: rgb(68, 68, 68);
+  width: 50px;
+}
+
+.navbar {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 10;
+  border-radius: 50%;
+  transition: transform 0.5s;
+}
+
+.open .navbar {
+  transform: scale(150);
+}
+
+.navbar-list {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  list-style: none;
+  z-index: 20;
+  opacity: 0;
+  background-color: rgb(255, 255, 255, 0.7);
+  visibility: hidden;
+  transition: opacity 1s;
+}
+
+.open .navbar-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-item {
+  margin: 1.5vh 0;
+  margin-right: 3em;
+}
+
+.navbar-link {
+  font-weight: bold;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(68, 68, 68);
+}
+
+.navbar-link:hover {
+  color: rgb(123, 255, 167);
+}
+
+.logo {
+  position: absolute;
+  height: 50px;
+  width: auto;
+  top: 2em;
+  left: 2em;
+}
+
+.blurred {
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: center;
+  border-radius: 0 0.5em 0.5em 0; 
+  position: fixed;
+  top: calc(50% - 50px);
+  left: 0;
+  margin: 0;
+  background-color: rgb(68, 68, 68);
+  z-index: 20;
+}
+
+.socials a {
+  font-size: 1.5em;
+  color:rgb(255, 255, 255);
+  padding: 0.4em;
+}
+
+/********** SECTIONS GENERAL **********/
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section h2 {
+  font-size: 2.5em;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(105,115,252);
+  border: 1px solid rgb(105,115,252);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: smaller;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(105,115,252);
+  color: rgb(105,115,252);
+}
+
+button:focus {
+  outline: none;
+}
+
+/********** INTRO SECTION **********/
+
+#intro-text {
+  border-right: 4px solid rgb(105,115,252);
+  font-size: 4em;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: bold;
+  color: rgb(105,115,252);
+  text-align: center;
+}
+
+/********** ABOUT SECTION **********/
+
+.about {
+  color: rgb(68, 68, 68);
+  position: relative;
+  text-align: left;
+  margin: 0;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  position: absolute;
+  right: 30vw;
+  top: calc(30vh - 150px);
+  z-index: 1;
+}
+
+.rectangle-1 {
+  background-color: rgb(105, 115, 252);
+  width: 75vw;
+  height: 30vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.rectangle-2 {
+  background-color: rgb(123, 255, 167);
+  width: 45vw;
+  height: 3vh;
+  position: absolute;
+  left: 0;
+  top: 56vh;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  top: 10vh;
+  text-align: left;
+  padding: 5em;
+  z-index: 2;
+}
+
+.content > h2 {
+  font-size: 3em;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.content > p {
+  font-size: 1em;
+  text-align: left;
+  max-width: 600px;
+}
+
+/********** PROJECT SECTION **********/
+
+.projects {
+  background-color: rgb(68, 68, 68);
+  height: fit-content;
+  padding: 5%;
+}
+
+.projects h2 {
+  color: rgb(255, 255, 255);
+  padding: 5%;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project {
+  position: relative;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  overflow: hidden;
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.project-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.project:hover .project-img, .project:active .project-img {
+  width: 150px;
+  height: 300px;
+  left: -75px;
+  transition: 0.5s ease-in-out;
+  background-color: rgb(105, 115, 252);
+  font-size: 0px;
+}
+
+.project-img img {
+  max-width: 400px;
+  transition: 0.5s ease-in-out;
+}
+
+.project:hover .project-img img, .project:active .project-img img{
+  opacity: 0;
+}
+
+.project-content {
+  position: absolute;
+  right: 0;
+  width: calc(100% - 75px);
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-content a {
+  color: rgb(51, 51, 51);
+  font-size: x-large;
+}
+
+/********** SKILLS SECTION **********/
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80vw;
+  position: relative;
+}
+
+.card {
+  width: 30em;
+  max-width: 60vw;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.card h3 {
+  position: absolute;
+  z-index: -10;
+  font-size: 10vw;
+  color:  rgb(123, 255, 167, 0.8);
+  margin: 0 auto;
+}
+
+.card p {
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.slider-button {
+  color:rgb(68, 68, 68);
+  font-size: 2em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-button:hover {
+  background-color: transparent;
+  color: rgb(123, 255, 167);
+  border: none;
+  outline: none;
+}
+
+.slider-button:active {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.icons {
+  display: inline-block;
+}
+
+.icons img {
+  width: 20px;
+}
+
+.slide,
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
+
+/********** CONTACT SECTION **********/
+
+form {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  padding-bottom: 5%;
+}
+
+input {
+  margin: 5%;
+  border: none;
+  border-bottom: 1.5px solid rgb(105,115,252);
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.5s ease-in-out;
+}
+
+textarea {
+  margin: 5%;
+  border: none;
+  border-bottom: 1.5px solid rgb(105,115,252);
+  font-family: "Open Sans", sans-serif;
+}
+
+input:hover,
+input:focus {
+  outline: none;
+  border-bottom: 1.5px solid  rgb(123, 255, 167);
+}
+
+textarea:hover,
+textarea:focus {
+  outline: none;
+  border-bottom: 1.5px solid  rgb(123, 255, 167);
+}
+
+form > button {
+  width: 100px;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5em;
+}
+
+/********** FOOTER SECTION **********/
+
+footer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 5em;
+  background-color: rgb(105,115,252);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  justify-content: center;
+  align-items: center; 
+  position: relative;
+  z-index: 1;
+}
+
+.wave {
+  position: absolute;
+  bottom: 4.5em;
+  z-index: -1;
+}
+
+/********** THANK YOU PAGE **********/
+
+.thankyou {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100vh;
+}
+
+.thankyou h1 {
+  font-weight: bold;
+  font-size: 5em;
+  color:rgb(105,115,252);
+}
+
+/********** MEDIA QUERIES **********/
+
+@media screen and (max-width: 700px) {
+  section {
+    min-height: 100vh;
+    height: fit-content;
+    width: 100vw;
+  }
+
+  .avatar {
+    width: 250px;
+    height: 250px;
+    right: 4em;
+    top: 3em;
+  }
+
+  .rectangle-1 {
+    width: calc(100vw - 5em);
+  }
+
+  .rectangle-2 {
+    width: 65vw;
+    top: 48vh;
+  }
+}
+
+/********** CROSSBROWSER COMPATIBILITY **********/
+@supports(backdrop-filter: blur(13px)) {
+  .navbar-list {
+    background-color: transparent;
+  }
+}
+
+@supports(-webkit-backdrop-filter: blur(13px)) {
+  .navbar-list {
+    background-color: transparent;
+  }
+}
