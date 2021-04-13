@@ -72,20 +72,56 @@ function printIntroText() {
   setTimeout(printIntroText, time);
 }
 
-// ABOUT SECTION - GSAP ANIMATION
+// SECTIONS H2 - GSAP ANIMATIONS
 
-let tl = gsap.timeline({
+let tl_1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".intro",
     start: "bottom bottom bottom",
   },
 });
 
-tl.from(".rectangle-1", { x: 300, opacity: 0, duration: 1 })
+tl_1
+  .from(".rectangle-1", { x: 300, opacity: 0, duration: 1 })
   .from(".content", { y: 200, opacity: 0, duration: 1 }, "=-1")
   .from(".avatar", { x: 200, opacity: 0, duration: 1 })
   .from(".rectangle-2", { x: -300, opacity: 0, duration: 1 });
 
+let tl_2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".about",
+    start: "bottom bottom bottom",
+  },
+});
+
+tl_2.from(".projects-h2", { x: -300, opacity: 0, duration: 1 });
+
+let tl_3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".projects",
+    start: "bottom bottom bottom",
+  },
+});
+
+tl_3.from(".skills-h2", { x: 300, opacity: 0, duration: 1 });
+
+let tl_4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".skills",
+    start: "bottom bottom bottom",
+  },
+});
+
+tl_4.from(".contact-h2", { y: -300, opacity: 0, duration: 1 });
+
+let tl_5 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".thankyou",
+    start: "top top top",
+  },
+});
+
+tl_5.from(".thankyou-h1", { y: -300, opacity: 0, duration: 1 });
 
 // SKILLS SECTION - CARD SLIDER
 

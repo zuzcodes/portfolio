@@ -40,10 +40,12 @@ p {
   align-items: flex-end;
   z-index: 30;
   transition: all 0.5s;
+  outline: none;
 }
 
 .hamburger:hover {
   border: none;
+  outline: none;
 }
 
 .open .hamburger {
@@ -154,7 +156,7 @@ p {
   flex-direction: column;
   list-style-type: none;
   justify-content: center;
-  border-radius: 0 0.5em 0.5em 0; 
+  border-radius: 0 0.5em 0.5em 0;
   position: fixed;
   top: calc(50% - 50px);
   left: 0;
@@ -165,7 +167,7 @@ p {
 
 .socials a {
   font-size: 1.5em;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   padding: 0.4em;
 }
 
@@ -191,34 +193,52 @@ section h2 {
   flex-direction: column;
 }
 
-button {
+.btn {
   padding: 10px 20px;
-  background-color: rgb(105,115,252);
-  border: 1px solid rgb(105,115,252);
-  color: rgb(255, 255, 255);
-  text-align: center;
-  font-size: smaller;
-}
-
-button:hover {
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(105,115,252);
-  color: rgb(105,115,252);
-}
-
-button:focus {
+  background: transparent;
+  color: rgb(105, 115, 252);
+  border: 2px solid rgb(105, 115, 252);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
   outline: none;
+}
+
+.btn:after {
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background-color: rgb(105, 115, 252);
+  position: absolute;
+}
+
+.btn,
+.btn:after {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  color: rgb(255, 255, 255);
+}
+
+.btn:hover:after {
+  width: 100%;
 }
 
 /********** INTRO SECTION **********/
 
 #intro-text {
-  border-right: 4px solid rgb(105,115,252);
+  border-right: 4px solid rgb(105, 115, 252);
   font-size: 4em;
   margin-left: 10%;
   margin-right: 10%;
   font-weight: bold;
-  color: rgb(105,115,252);
+  color: rgb(105, 115, 252);
   text-align: center;
 }
 
@@ -329,7 +349,8 @@ button:focus {
   transition: 0.5s ease-in-out;
 }
 
-.project:hover .project-img, .project:active .project-img {
+.project:hover .project-img,
+.project:active .project-img {
   width: 150px;
   height: 300px;
   left: -75px;
@@ -343,7 +364,8 @@ button:focus {
   transition: 0.5s ease-in-out;
 }
 
-.project:hover .project-img img, .project:active .project-img img{
+.project:hover .project-img img,
+.project:active .project-img img {
   opacity: 0;
 }
 
@@ -391,7 +413,7 @@ button:focus {
   position: absolute;
   z-index: -10;
   font-size: 10vw;
-  color:  rgb(123, 255, 167, 0.8);
+  color: rgb(123, 255, 167, 0.8);
   margin: 0 auto;
 }
 
@@ -402,7 +424,7 @@ button:focus {
 }
 
 .slider-button {
-  color:rgb(68, 68, 68);
+  color: rgb(68, 68, 68);
   font-size: 2em;
   background-color: transparent;
   border: none;
@@ -420,14 +442,6 @@ button:focus {
   background-color: transparent;
   border: none;
   outline: none;
-}
-
-.icons {
-  display: inline-block;
-}
-
-.icons img {
-  width: 20px;
 }
 
 .slide,
@@ -462,7 +476,8 @@ form {
 input {
   margin: 5%;
   border: none;
-  border-bottom: 1.5px solid rgb(105,115,252);
+  border-radius: 0;
+  border-bottom: 1.5px solid rgb(105, 115, 252);
   font-family: "Open Sans", sans-serif;
   transition: all 0.5s ease-in-out;
 }
@@ -470,20 +485,21 @@ input {
 textarea {
   margin: 5%;
   border: none;
-  border-bottom: 1.5px solid rgb(105,115,252);
+  border-radius: 0;
+  border-bottom: 1.5px solid rgb(105, 115, 252);
   font-family: "Open Sans", sans-serif;
 }
 
 input:hover,
 input:focus {
   outline: none;
-  border-bottom: 1.5px solid  rgb(123, 255, 167);
+  border-bottom: 1.5px solid rgb(123, 255, 167);
 }
 
 textarea:hover,
 textarea:focus {
   outline: none;
-  border-bottom: 1.5px solid  rgb(123, 255, 167);
+  border-bottom: 1.5px solid rgb(123, 255, 167);
 }
 
 form > button {
@@ -500,11 +516,11 @@ footer {
   flex-direction: row;
   width: 100vw;
   height: 5em;
-  background-color: rgb(105,115,252);
+  background-color: rgb(105, 115, 252);
   color: rgb(255, 255, 255);
   font-weight: bold;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   position: relative;
   z-index: 1;
 }
@@ -522,6 +538,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin: auto;
   height: 100vh;
 }
@@ -529,7 +546,7 @@ footer {
 .thankyou h1 {
   font-weight: bold;
   font-size: 5em;
-  color:rgb(105,115,252);
+  color: rgb(105, 115, 252);
 }
 
 /********** MEDIA QUERIES **********/
@@ -542,10 +559,10 @@ footer {
   }
 
   .avatar {
-    width: 250px;
-    height: 250px;
-    right: 4em;
-    top: 3em;
+    width: 200px;
+    height: 200px;
+    right: 3em;
+    top: 4em;
   }
 
   .rectangle-1 {
@@ -554,18 +571,28 @@ footer {
 
   .rectangle-2 {
     width: 65vw;
-    top: 48vh;
+    top: 52vh;
+  }
+
+  .content {
+    top: 13vh;
+    padding: 4em;
+  }
+  
+  .content > p {
+    font-size: 1em;;
+    max-width: 650px;
   }
 }
 
 /********** CROSSBROWSER COMPATIBILITY **********/
-@supports(backdrop-filter: blur(13px)) {
+@supports (backdrop-filter: blur(13px)) {
   .navbar-list {
     background-color: transparent;
   }
 }
 
-@supports(-webkit-backdrop-filter: blur(13px)) {
+@supports (-webkit-backdrop-filter: blur(13px)) {
   .navbar-list {
     background-color: transparent;
   }
