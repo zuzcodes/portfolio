@@ -571,17 +571,18 @@ footer {
 
   .rectangle-2 {
     width: 65vw;
-    top: 52vh;
+    top: 46.5vh;
   }
 
   .content {
-    top: 13vh;
+    top: 18vh;
     padding: 4em;
+    padding-bottom: 40%;
   }
   
   .content > p {
     font-size: 1em;;
-    max-width: 650px;
+    max-width: 700px;
   }
 }
 
