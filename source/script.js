@@ -1,6 +1,7 @@
+"use strict";
+
 // INIT SET UP
 
-"use strict";
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
@@ -14,18 +15,14 @@ function init() {
     });
   });
 
-  document.querySelector("#next").addEventListener("click", function () {
-    goToNextSlide();
-  });
-
-  document.querySelector("#previous").addEventListener("click", function () {
-    goToPreviousSlide();
-  });
+  document.querySelector("#next").addEventListener("click", goToNextSlide);
+  document.querySelector("#previous").addEventListener("click", goToPreviousSlide);
+  document.querySelector("#up").addEventListener("click", backToTop);
 
   printIntroText();
 }
 
-// INTRO SECTION - TEXT PRINT
+// TEXT PRINT
 
 const introText = document.querySelector("#intro-text");
 const phrases = ["Hello!", "My name is Zuz.", "Welcome to my portfolio website."];
@@ -72,7 +69,7 @@ function printIntroText() {
   setTimeout(printIntroText, time);
 }
 
-// SECTIONS H2 - GSAP ANIMATIONS
+// SCROLLING GSAP ANIMATIONS
 
 let tl_1 = gsap.timeline({
   scrollTrigger: {
@@ -80,7 +77,6 @@ let tl_1 = gsap.timeline({
     start: "bottom bottom bottom",
   },
 });
-
 tl_1
   .from(".rectangle-1", { x: 300, opacity: 0, duration: 1 })
   .from(".content", { y: 200, opacity: 0, duration: 1 }, "=-1")
@@ -93,7 +89,6 @@ let tl_2 = gsap.timeline({
     start: "bottom bottom bottom",
   },
 });
-
 tl_2.from(".projects-h2", { x: -300, opacity: 0, duration: 1 });
 
 let tl_3 = gsap.timeline({
@@ -102,7 +97,6 @@ let tl_3 = gsap.timeline({
     start: "bottom bottom bottom",
   },
 });
-
 tl_3.from(".skills-h2", { x: 300, opacity: 0, duration: 1 });
 
 let tl_4 = gsap.timeline({
@@ -111,17 +105,7 @@ let tl_4 = gsap.timeline({
     start: "bottom bottom bottom",
   },
 });
-
 tl_4.from(".contact-h2", { y: -300, opacity: 0, duration: 1 });
-
-let tl_5 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".thankyou",
-    start: "top top top",
-  },
-});
-
-tl_5.from(".thankyou-h1", { y: -300, opacity: 0, duration: 1 });
 
 // SKILLS SECTION - CARD SLIDER
 
@@ -153,4 +137,9 @@ function goToPreviousSlide() {
     slidePosition--;
   }
   updatePosition();
+}
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }

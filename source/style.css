@@ -32,8 +32,6 @@ p {
   position: absolute;
   top: 2em;
   right: 2em;
-  border: none;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,6 +39,8 @@ p {
   z-index: 30;
   transition: all 0.5s;
   outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .hamburger:hover {
@@ -198,6 +198,8 @@ section h2 {
   background: transparent;
   color: rgb(105, 115, 252);
   border: 2px solid rgb(105, 115, 252);
+  text-transform: uppercase;
+  font-weight: bold;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -228,6 +230,30 @@ section h2 {
 
 .btn:hover:after {
   width: 100%;
+}
+
+.arrow-btn {
+  color: rgb(105, 115, 252);
+  font-size: 2em;
+  background-color: transparent;
+  z-index: 15;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.arrow-btn:hover {
+  background-color: transparent;
+  color: rgb(123, 255, 167);
+  border: none;
+  outline: none;
+}
+
+.arrow-btn:active,
+.arrow-btn:after {
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 /********** INTRO SECTION **********/
@@ -277,7 +303,7 @@ section h2 {
   height: 3vh;
   position: absolute;
   left: 0;
-  top: 56vh;
+  top: 54.5vh;
   z-index: 0;
 }
 
@@ -304,7 +330,7 @@ section h2 {
 /********** PROJECT SECTION **********/
 
 .projects {
-  background-color: rgb(68, 68, 68);
+  background-color: rgb(94, 94, 94);
   height: fit-content;
   padding: 5%;
 }
@@ -417,31 +443,24 @@ section h2 {
   margin: 0 auto;
 }
 
+.card img {
+  position: absolute;
+  width: 70vw;
+  height: auto;
+  margin: 0 auto;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index: -10;
+}
+
+.card h3 {
+  color: transparent;
+}
+
 .card p {
   font-weight: bold;
   font-size: 1em;
   text-transform: uppercase;
-}
-
-.slider-button {
-  color: rgb(68, 68, 68);
-  font-size: 2em;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.slider-button:hover {
-  background-color: transparent;
-  color: rgb(123, 255, 167);
-  border: none;
-  outline: none;
-}
-
-.slider-button:active {
-  background-color: transparent;
-  border: none;
-  outline: none;
 }
 
 .slide,
@@ -533,29 +552,23 @@ footer {
 
 /********** THANK YOU PAGE **********/
 
-.thankyou {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  height: 100vh;
-}
-
-.thankyou h1 {
+#thankyou-text {
+  font-size: 4em;
+  margin-left: 10%;
+  margin-right: 10%;
   font-weight: bold;
-  font-size: 5em;
   color: rgb(105, 115, 252);
+  text-align: center;
+  justify-content: center;
 }
 
 /********** MEDIA QUERIES **********/
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   section {
     min-height: 100vh;
     height: fit-content;
-    width: 100vw;
+    max-width: 100vw;
   }
 
   .avatar {
@@ -571,18 +584,24 @@ footer {
 
   .rectangle-2 {
     width: 65vw;
-    top: 46.5vh;
+    top: 48vh;
   }
 
   .content {
     top: 18vh;
-    padding: 4em;
     padding-bottom: 40%;
   }
-  
+  .content > h2 {
+    padding-bottom: 0;
+  }
+
   .content > p {
-    font-size: 1em;;
-    max-width: 700px;
+    font-size: 0.9em;
+  }
+
+  .card img {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
   }
 }
 
