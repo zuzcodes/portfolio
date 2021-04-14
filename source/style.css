@@ -567,7 +567,7 @@ footer {
 @media screen and (max-width: 750px) {
   section {
     min-height: 100vh;
-    height: fit-content;
+    height: 100%;
     max-width: 100vw;
   }
 
