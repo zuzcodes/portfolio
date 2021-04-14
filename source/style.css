@@ -331,7 +331,7 @@ section h2 {
 
 .projects {
   background-color: rgb(94, 94, 94);
-  height: fit-content;
+  height: 100%;
   padding: 5%;
 }
 
@@ -354,7 +354,6 @@ section h2 {
   display: flex;
   background-color: rgb(255, 255, 255);
   margin: 10px;
-  overflow: hidden;
   overflow: hidden;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -606,6 +605,7 @@ footer {
 }
 
 /********** CROSSBROWSER COMPATIBILITY **********/
+
 @supports (backdrop-filter: blur(13px)) {
   .navbar-list {
     background-color: transparent;
