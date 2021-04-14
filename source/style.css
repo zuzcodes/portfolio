@@ -527,6 +527,7 @@ form > button {
   margin-bottom: 5em;
 }
 
+
 /********** FOOTER SECTION **********/
 
 footer {
@@ -545,7 +546,7 @@ footer {
 
 .wave {
   position: absolute;
-  bottom: 4.5em;
+  bottom: 2em;
   z-index: -1;
 }
 
@@ -601,6 +602,10 @@ footer {
   .card img {
     filter: blur(4px);
     -webkit-filter: blur(4px);
+  }
+
+  .wave {
+    bottom: 5em;
   }
 }
 
