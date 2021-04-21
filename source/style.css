@@ -174,7 +174,7 @@ p {
 /********** SECTIONS GENERAL **********/
 
 section {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -183,7 +183,7 @@ section {
 }
 
 section h2 {
-  font-size: 2.5em;
+  font-size: 3em;
   text-align: center;
   padding-bottom: 5%;
 }
@@ -258,6 +258,10 @@ section h2 {
 
 /********** INTRO SECTION **********/
 
+.intro {
+  position: relative;
+}
+
 #intro-text {
   border-right: 4px solid rgb(105, 115, 252);
   font-size: 4em;
@@ -268,69 +272,33 @@ section h2 {
   text-align: center;
 }
 
-/********** ABOUT SECTION **********/
-
-.about {
-  color: rgb(68, 68, 68);
-  position: relative;
-  text-align: left;
-  margin: 0;
-}
-
-.avatar {
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
+.intro-cta {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  right: 30vw;
-  top: calc(30vh - 150px);
-  z-index: 1;
+  bottom: 5em;
 }
 
-.rectangle-1 {
-  background-color: rgb(105, 115, 252);
-  width: 75vw;
-  height: 30vh;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
+#intro-cta-btn {
+  border-radius: 20px;
+  border-color: rgb(123, 255, 167);
+  color: rgb(123, 255, 167);
 }
 
-.rectangle-2 {
+#intro-cta-btn:after {
   background-color: rgb(123, 255, 167);
-  width: 45vw;
-  height: 3vh;
-  position: absolute;
-  left: 0;
-  top: 54.5vh;
-  z-index: 0;
+  z-index: -1;
+  content: "";
 }
 
-.content {
-  position: relative;
-  top: 10vh;
-  text-align: left;
-  padding: 5em;
-  z-index: 2;
-}
-
-.content > h2 {
-  font-size: 3em;
-  margin-bottom: 0;
-  text-align: left;
-}
-
-.content > p {
-  font-size: 1em;
-  text-align: left;
-  max-width: 600px;
+#intro-cta-btn:hover {
+  color: rgb(255, 255, 255);
 }
 
 /********** PROJECT SECTION **********/
 
 .projects {
-  background-color: rgb(94, 94, 94);
+  background-color: rgb(153, 153, 153);
   height: 100%;
   padding: 5%;
 }
@@ -345,6 +313,7 @@ section h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5em;
 }
 
 .project {
@@ -410,6 +379,69 @@ section h2 {
   font-size: x-large;
 }
 
+.note {
+  font-size: 0.7em;
+}
+
+/********** ABOUT SECTION **********/
+
+.about {
+  color: rgb(68, 68, 68);
+  position: relative;
+  text-align: left;
+  margin: 0;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  position: absolute;
+  right: 30vw;
+  top: calc(30vh - 150px);
+  z-index: 1;
+}
+
+.rectangle-1 {
+  background-color: rgb(105, 115, 252);
+  width: 75vw;
+  height: 30vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.rectangle-2 {
+  background-color: rgb(123, 255, 167);
+  width: 85vw;
+  height: 20vh;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  top: 10vh;
+  text-align: left;
+  padding: 5em;
+  z-index: 2;
+}
+
+.content > h2 {
+  font-size: 3em;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.content > p {
+  font-size: 1em;
+  text-align: left;
+  max-width: 600px;
+}
+
 /********** SKILLS SECTION **********/
 
 .slider {
@@ -417,43 +449,25 @@ section h2 {
   flex-direction: row;
   justify-content: space-around;
   width: 80vw;
-  position: relative;
 }
 
 .card {
-  width: 30em;
-  max-width: 60vw;
-  height: 20em;
+  width: 20em;
+  height: 25em;
   display: flex;
   flex-direction: column;
-  background-color: transparent;
+  background-color: rgb(255, 255, 255);
   text-align: center;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgb(105, 115, 252, 0.5);
 }
 
 .card h3 {
-  position: absolute;
-  z-index: -10;
-  font-size: 10vw;
-  color: rgb(123, 255, 167, 0.8);
-  margin: 0 auto;
-}
-
-.card img {
-  position: absolute;
-  width: 70vw;
-  height: auto;
-  margin: 0 auto;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-  z-index: -10;
-}
-
-.card h3 {
-  color: transparent;
+  font-weight: bold;
+  font-size: 2em;
+  color: rgb(123, 255, 167);
 }
 
 .card p {
@@ -527,7 +541,6 @@ form > button {
   margin-bottom: 5em;
 }
 
-
 /********** FOOTER SECTION **********/
 
 footer {
@@ -571,37 +584,21 @@ footer {
     max-width: 100vw;
   }
 
-  .avatar {
-    width: 200px;
-    height: 200px;
-    right: 3em;
-    top: 4em;
-  }
-
-  .rectangle-1 {
-    width: calc(100vw - 5em);
-  }
-
-  .rectangle-2 {
-    width: 65vw;
-    top: 45%;
+  .about {
+    height: calc(100vh + 150px);
   }
 
   .content {
-    top: 18vh;
-    padding-bottom: 40%;
-  }
-  .content > h2 {
-    padding-bottom: 0;
+    top: 150px;
   }
 
-  .content > p {
-    font-size: 0.9em;
+  .card {
+    width: 17em;
+    height: 22em;
   }
 
-  .card img {
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
+  .card p {
+    font-size: 0.8em;
   }
 
   .wave {
@@ -613,12 +610,12 @@ footer {
 
 @supports (backdrop-filter: blur(13px)) {
   .navbar-list {
-    background-color: transparent;
+    background-color: rgb(255, 255, 255, 0.3);
   }
 }
 
 @supports (-webkit-backdrop-filter: blur(13px)) {
   .navbar-list {
-    background-color: transparent;
+    background-color: rgb(255, 255, 255, 0.3);
   }
 }

@@ -47,27 +47,9 @@
 
     <section class="intro">
       <h1 id="intro-text"></h1>
-    </section>
-
-    <section class="about">
-      <article class="content">
-        <h2><a name="about">About</a></h2>
-        <h3>UX | UI | FRONTEND</h3>
-        <p>
-          I am studying Multimedia Design at Copenhagen School of Design and Technology, with main focus on UI|UX & Frontend Design.
-          <br />
-          I am a person driven by visuals with an eye for detail. I am passionate about learning and building new things. I like to design and code minimalist
-          user interfaces and make simple games.
-          <br />
-          I made this website to showcase some of my favourite projects, outline tools I usually work with and skills I have gained so far on my journey.
-        </p>
-        <a href="files/cv-gyuranova.pdf" download="CV">
-          <button class="btn" type="button">Download CV</button>
-        </a>
-      </article>
-      <div class="rectangle-1"></div>
-      <div class="rectangle-2"></div>
-      <img class="avatar" src="files/headshot.jpg" />
+      <div class="intro-cta">
+        <a href="#projects"><button id="intro-cta-btn" class="btn">see my work</button></a>
+      </div>
     </section>
 
     <section class="projects">
@@ -114,7 +96,7 @@
               <p>
                 Main objective of this project was to design and code product configurator website. My main responsibilities were wireframing and coding of the
                 configurator product page. It is configurable in different colors with different components, some of which are mutually exclusive. Part of the
-                learning goal was to work with an manipulate SVG files and also becoming familiar with the GSAP animations.
+                learning goal was to work with manipulation of SVG files and also becoming familiar with the GSAP animations.
               </p>
               <a href="https://zuzcodes.github.io/lampshop/" target="_blank"><i class="fas fa-angle-double-right"></i></a>
             </div>
@@ -160,15 +142,36 @@
             <div>
               <h3>JSON Data Handling, Sort, Filter & Search</h3>
               <p>
-                This project is a representaton of a student administration interface. Its main focus was data clean up and its organization within the
-                interface in different ways. Students can be filtered by house, gender, roles and student status, while being sorted alphabetically. Under some
-                circumstances students can be given different roles or be expelled.
+                This project is a representation of a student administration interface. Its main focus was data clean up and its organization in different ways.
+                Students can be filtered by house, gender and status, while being sorted alphabetically. They can be given different roles or be expelled.
               </p>
+              <p class="note">Note: Since responsivness was not a main focus, it is only available in a desktop version for now. </p>
               <a href="https://zuzcodes.github.io/hackedhogwarts/" target="_blank"><i class="fas fa-angle-double-right"></i></a>
             </div>
           </article>
         </article>
       </article>
+    </section>
+
+    <section class="about">
+      <article class="content">
+        <h2><a name="about">About</a></h2>
+        <h3>UX | UI | FRONTEND</h3>
+        <p>
+          I am studying Multimedia Design at Copenhagen School of Design and Technology, with main focus on UI|UX & Frontend Design.
+          <br />
+          I am a person driven by visuals with an eye for detail. I am passionate about learning and building new things. I like to design and code minimalist
+          user interfaces and make simple games.
+          <br />
+          I made this website to showcase some of my favourite projects, outline tools I usually work with and skills I have gained so far on my journey.
+        </p>
+        <a href="files/cv-gyuranova.pdf" download="CV">
+          <button class="btn" type="button">Download CV</button>
+        </a>
+      </article>
+      <div class="rectangle-1"></div>
+      <div class="rectangle-2"></div>
+      <img class="avatar" src="files/headshot.jpg" />
     </section>
 
     <section class="container skills">
@@ -177,8 +180,7 @@
         <button id="previous" class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
         <article class="slide visible">
           <article class="card">
-            <img src="files/ux-ui.png" />
-            <h3>UX/UI</h3>
+            <h3>UX | UI</h3>
             <p>Adobe Suite</p>
             <p>Research</p>
             <p>Wireframing</p>
@@ -188,7 +190,6 @@
         </article>
         <article class="slide">
           <article class="card">
-            <img src="files/frontend.png" />
             <h3>FRONTEND</h3>
             <p>HTML5</p>
             <p>CSS3</p>
@@ -198,8 +199,7 @@
         </article>
         <article class="slide">
           <article class="card">
-            <img src="files/digital-marketing.png" />
-            <h3>DIGITAL MARKETING</h3>
+            <h3>DIGITAL <br/> MARKETING</h3>
             <p>SEO | SEM</p>
             <p>Campaigns</p>
             <p>SoMe Planning</p>
@@ -208,7 +208,6 @@
         </article>
         <article class="slide">
           <article class="card">
-            <img src="files/platforms.png" />
             <h3>PLATFORMS</h3>
             <p>Squerespace</p>
             <p>WordPress</p>
@@ -217,7 +216,6 @@
         </article>
         <article class="slide">
           <article class="card">
-            <img src="files/team-work.png" />
             <h3>TEAM WORK</h3>
             <p>Sprint</p>
             <p>Scrum</p>
