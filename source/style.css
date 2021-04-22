@@ -279,22 +279,6 @@ section h2 {
   bottom: 5em;
 }
 
-#intro-cta-btn {
-  border-radius: 20px;
-  border-color: rgb(123, 255, 167);
-  color: rgb(123, 255, 167);
-}
-
-#intro-cta-btn:after {
-  background-color: rgb(123, 255, 167);
-  z-index: -1;
-  content: "";
-}
-
-#intro-cta-btn:hover {
-  color: rgb(255, 255, 255);
-}
-
 /********** PROJECT SECTION **********/
 
 .projects {
